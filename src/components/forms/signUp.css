@@ -1,0 +1,20 @@
+.container{
+    height: calc(100vh - 9rem);
+    display: grid;
+    place-items: center;
+}
+
+.register__container{
+    width: 80%;
+}
+
+.register__container h2{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.register__container form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}

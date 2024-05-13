@@ -1,0 +1,16 @@
+.form__wrapper{
+    height: calc(100vh - 10rem);
+    display: grid;
+    place-items: center;
+}
+
+.form__wrapper form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.form__actions{
+    display: flex;
+    gap: 0.5rem;
+}
