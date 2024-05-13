@@ -95,6 +95,16 @@ const getNewsForYearAndMonth = async(year: number, month: number) => {
     return news
 }
 
+const getNewsImages = async() => {
+    const news = await prisma.news.findMany({
+        select: {
+            image: true
+        }
+    })
+
+    return news
+}
+
 export {
     createNews, 
     getNews,
@@ -103,5 +113,6 @@ export {
     getAvailableNewsYears,
     getAvailableNewsMonths,
     getNewsForYear,
-    getNewsForYearAndMonth
+    getNewsForYearAndMonth,
+    getNewsImages
 }

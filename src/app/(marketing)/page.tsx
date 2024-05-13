@@ -1,34 +1,41 @@
 import Image from "next/image";
-import logo from '@/../public/logo.jpg'
+import logo from "@/../public/logo.jpg";
 import Link from "next/link";
+import Slideshow from "@/components/SlideShow";
+import { getNewsImages } from "@/utils/db";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const images = await getNewsImages();
+  const timages = images.map((image) => image.image);
   return (
-    <div id="home">
-      <Image src={logo} alt="A newspaper" />
-      <h1>A News Site For The Next Generation</h1>
-      <p>
-        Next News is here to deliver you all the latest news - concise &
-        unbiased!
-      </p>
+    <>
+      <div id="home">
+        <Image src={logo} alt="A newspaper" />
+        <h1>A News Site For The Next Generation</h1>
+        <p>
+          Next News is here to deliver you all the latest news - concise &
+          unbiased!
+        </p>
 
-      <p>
-        NextNews aims to provide you with the latest news in a concise and
-        unbiased manner. We strive to deliver the news in a way that is easy to
-        understand and to the point. We want to keep you informed without
-        overwhelming you with unnecessary information.
-      </p>
+        <p>
+          NextNews aims to provide you with the latest news in a concise and
+          unbiased manner. We strive to deliver the news in a way that is easy
+          to understand and to the point. We want to keep you informed without
+          overwhelming you with unnecessary information.
+        </p>
 
-      <p>
-        We employ a team of dedicated journalists who are committed to
-        delivering the news in a fair and unbiased manner. Our team is
-        passionate about keeping you informed and up to date with the latest
-        news.
-      </p>
+        <p>
+          We employ a team of dedicated journalists who are committed to
+          delivering the news in a fair and unbiased manner. Our team is
+          passionate about keeping you informed and up to date with the latest
+          news.
+        </p>
 
-      <p>
-        <Link href="/news">Read the latest news</Link>
-      </p>
-    </div>
+        <p>
+          <Link href="/news">Read the latest news</Link>
+        </p>
+      </div>
+      <Slideshow images={timages} />
+    </>
   );
 }
