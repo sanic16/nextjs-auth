@@ -56,6 +56,7 @@ const createNewsAction = async(prevState: {errors: string[]}, formData: FormData
         return {errors}
     }else{
         revalidatePath('/news')
+        revalidatePath('/')
         redirect('/news')
     }
 }
