@@ -24,7 +24,6 @@ const getNews = async() => {
         }
     })
 
-    await new Promise(resolve => setTimeout(resolve, 2000))
     return news
 }
 
@@ -75,8 +74,6 @@ const getNewsForYear = async(year: number) => {
         }
     })
 
-    await new Promise(resolve => setTimeout(resolve, 3000))
-
     return news
 }
 
@@ -89,9 +86,6 @@ const getNewsForYearAndMonth = async(year: number, month: number) => {
             }
         }
     })
-
-    await new Promise(resolve => setTimeout(resolve, 3000))
-
     return news
 }
 

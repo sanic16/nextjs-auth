@@ -1,6 +1,4 @@
-import type { Metadata } from "next";
-import "../globals.css";
-import MainHeader from "@/components/MainHeader";
+import "./globals.css";
 
 export const metadata = {
   title: "Next.js Page Routing & Rendering",
@@ -9,13 +7,14 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <div id="page">
-      <MainHeader />
-      {children}
-    </div>
+    <>
+      <html>
+        <body>{children}</body>
+      </html>
+    </>
   );
 }
